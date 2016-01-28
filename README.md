@@ -39,3 +39,12 @@ Or you could run as the command in silence
 ```shell
 python3 get_video.py http://presentur.ntu.edu.sg/podcast/rss/rss5456_2.xml > /dev/null &
 ```
+
+## Filename
+
+You can rename the file by editing the code
+
+Or you can use the following command. (Just for your information)
+```shell
+rename 's/(\d+)\s[\w\-\s]+/nameyouwang\ $1/' *.mp4
+```
