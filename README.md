@@ -29,6 +29,8 @@ A python command line tool for downloading lecture recordings, with order.
     It should be in a format like
     http://presentur.ntu.edu.sg/podcast/rss/rss5456_2.xml
 
+    **Please pay attention that you should copy url that ends with "_2.xml". This is for mp4 recording.**
+
 5. Run the following command in your terminal
 ```shell
 python3 get_video.py http://presentur.ntu.edu.sg/podcast/rss/rss5456_2.xml
