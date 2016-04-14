@@ -14,7 +14,7 @@ def USAGE():
 
 def GET_metafile(url):
 	page_source = urlopen(url).read()
-	soup = BeautifulSoup(page_source)
+	soup = BeautifulSoup(page_source, 'html.parser')
 	meta_url_list = []
 	for link in soup.find_all('item'):
 		title = link.find('title').contents[0]
@@ -32,7 +32,7 @@ def GET_metafile(url):
 		process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 		process.wait()
 		stdout, stderr = process.communicate()
-		media_url = BeautifulSoup(stdout.decode('ascii')).find_all('a', href=True)[0]['href']
+		media_url = BeautifulSoup(stdout.decode('ascii'), 'html.parser').find_all('a', href=True)[0]['href']
 		
 		video_name = str(video_index) + " " + title + ".mp4"
 		command = "curl -X GET '" + media_url + "' > " + video_name
